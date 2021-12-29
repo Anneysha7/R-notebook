@@ -1,0 +1,13 @@
+##############################   PROBLEM STATEMENT   ##############################
+## ---------------------------------------------------------------------------- ##
+# An NGO is doing research to study the most liveable and least liveable cities #
+# Select some city factors that you think are important and complete the project. #
+## ---------------------------------------------------------------------------- ##
+
+States_Info <- read.csv('stateData.csv') #opening csv file
+liveable_Cities <- States_Info[States_Info$illiteracy < 4 & States_Info$life.exp >= 60 & States_Info$murder <= 4.9 & States_Info$frost < 150 & States_Info$income > 4000,] #settng conditions
+liveable_Cities # printing the list of cities that fit the conditions
+
+## Data sources ##
+# Homicide rate in the US : https://en.wikipedia.org/wiki/List_of_countries_by_intentional_homicide_rate
+# Average Monthly Income in the US : https://www.worlddata.info/average-income.php (Divided by 12 to get monthly income)
